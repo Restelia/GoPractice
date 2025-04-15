@@ -2,11 +2,14 @@ package main
 
 import "fmt"
 
-func main() {
-	sum := 0
-
+func ourSqrt(x float64) float64 {
+	z := 1.0
 	for i := 0; i < 10; i++ {
-		sum += i
+		z -= (z*z - x) / (2 * z)
 	}
-	fmt.Println("Sum is:", sum)
+	return z
+}
+
+func main() {
+	fmt.Println("Sum is:", ourSqrt(10))
 }
